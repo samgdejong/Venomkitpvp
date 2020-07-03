@@ -1,5 +1,5 @@
 name: Venomkitpvp
-version: 1.5.2
+version: 1.5.5
 main: me.crazzycarot.venomkitpvp.core.main
 author: crazzycarot
 
@@ -31,3 +31,11 @@ commands:
   description: talk in the staffchat
   permission: venomkitpvp.staffchat
   aliases: [sc]
+ sctoggle:
+  usage: /sctoggle
+  description: toggle the staffchat
+  permission: venomkitpvp.staffchat
+ freeze:
+  usage: /freeze
+  description: Freeze a player
+  permission: freeze.use

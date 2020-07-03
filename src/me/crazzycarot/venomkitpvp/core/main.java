@@ -9,6 +9,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.crazzycarot.venomkitpvp.commands.freeze;
 import me.crazzycarot.venomkitpvp.commands.lobby;
 import me.crazzycarot.venomkitpvp.commands.reclaim;
 import me.crazzycarot.venomkitpvp.commands.setarena;
@@ -24,7 +25,7 @@ import me.crazzycarot.venomkitpvp.scoreboard.scoreboard;
 public class main extends JavaPlugin implements Listener, CommandExecutor {
 
 	public void onEnable() {
-		getServer().getLogger().info("Venomkitpvp version 1.5.2 is enabled!");
+		getServer().getLogger().info("Venomkitpvp version 1.5.5 is enabled!");
 		saveDefaultConfig();
 		getConfig().options().copyDefaults();
 
@@ -33,6 +34,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor {
 		new Kitselector(this);
 		new Join(this);
 		new killstreak(this);
+		new freeze(this);
 
 		getCommand("setarena").setExecutor(this);
 		getCommand("spawn").setExecutor(new spawn(this));
@@ -42,14 +44,15 @@ public class main extends JavaPlugin implements Listener, CommandExecutor {
 		getCommand("reclaim").setExecutor(new reclaim(this));
 		getCommand("setarena").setExecutor(new setarena(this));
 		getCommand("staffchat").setExecutor(new staffchat(this));
+		getCommand("sctoggle").setExecutor(new staffchat(this));
+		getCommand("freeze").setExecutor(new freeze(this));
 
 	}
-	
+
 	public main plugin;
 
-
 	public File reclaimYml = new File(this.getDataFolder() + "/reclaims.yml");
-	public FileConfiguration customConfig= YamlConfiguration.loadConfiguration(reclaimYml);
+	public FileConfiguration customConfig = YamlConfiguration.loadConfiguration(reclaimYml);
 
 	public void savereclaimYml(FileConfiguration ymlConfig, File ymlFile) {
 		try {
@@ -59,8 +62,4 @@ public class main extends JavaPlugin implements Listener, CommandExecutor {
 		}
 	}
 
-
-
 }
-
-
