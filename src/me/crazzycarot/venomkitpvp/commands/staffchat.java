@@ -24,35 +24,52 @@ public class staffchat implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("staffchat")) {
 			if (plugin.getConfig().getString("staffchat.enabled") == "true") {
-			Player p = (Player) sender;
-			if (p.hasPermission("venomkitpvp.staffchat")) {
-				{
-					String message = "";
-					for (String part : args) {
-						if (message != "")
-							message += " ";
-						message += part;
-					}
-					for (Player all : Bukkit.getOnlinePlayers()) {
-						if (all.hasPermission("venomkitpvp.staffchat")) {
-							if (!staffchat.contains(all)) {
-								if (plugin.getConfig().getString("staffchat.message")  == null) {
-								all.sendMessage("§f§l[§6§lSTAFFCHAT§F§l]§f " + p.getName() + " §e" + message);
+				Player p = (Player) sender;
+				if (p.hasPermission("venomkitpvp.staffchat")) {
+					{
+						String message = "";
+						for (String part : args) {
+							if (message != "")
+								message += " ";
+							message += part;
+						}
+						for (Player all : Bukkit.getOnlinePlayers()) {
+							if (all.hasPermission("venomkitpvp.staffchat")) {
+								if (!staffchat.contains(all)) {
+									if (plugin.getConfig().getString("staffchat.message") == null) {
+										all.sendMessage("§f§l[§6§lSTAFFCHAT§F§l]§f " + p.getName() + " §e" + message);
+									} else {
+										String format = plugin.getConfig().getString("staffchat.message")
+												.replaceAll("%player%", p.getName().replaceAll("%message%", message));
+										all.sendMessage(ChatColor.translateAlternateColorCodes('&',
+												format.replaceAll("%message%", message)));
+									}
 								}
-								else {
-									String format = plugin.getConfig().getString("staffchat.message").replaceAll("%player%", p.getName().replaceAll("%message%", message));
-									all.sendMessage(ChatColor.translateAlternateColorCodes('&', format.replaceAll("%message%", message)));
-								}
+
 							}
-  
 						}
 					}
+				} else {
+					p.sendMessage(
+							ChatColor.DARK_RED + "You dont have the required permission note venomkitpvp.staffchat");
 				}
-			} else {
-				p.sendMessage(ChatColor.DARK_RED + "You dont have the required permission note venomkitpvp.staffchat");
-			}
 			}
 
+		}
+		if (cmd.getName().equalsIgnoreCase("sctoggle")) {
+			Player p = (Player) sender;
+			if (p.hasPermission("venomkitpvp.staffchat")) {
+				if (staffchat.contains(p)) {
+					staffchat.remove(p);
+					p.sendMessage(ChatColor.DARK_RED + "You now toggled staffchat, u will now recieve messages from the Staffchat");
+					
+				}
+				else {
+					staffchat.add(p);
+					p.sendMessage(ChatColor.DARK_RED + "You now toggled staffchat, u wont recieve any messages from the Staffchat");
+
+				}
+			}
 		}
 		return true;
 
