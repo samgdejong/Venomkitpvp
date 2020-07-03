@@ -1,0 +1,28 @@
+reclaimA:
+  name: EpicReclaim123''
+  command: 'broadcast Hoi'
+  enabled: true/false
+reclaimB:
+  name: EpicReclaim1234
+  command: 'broadcast Hoi'
+  enabled: true/false
+reclaimC:
+  name: EpicReclaim1235
+  command: 'broadcast Hoi'
+  enabled: true/false
+reclaimD:
+  name: EpicReclaim1236
+  command: 'broadcast Hoi'
+  enabled: true/false
+reclaimE:
+  name: EpicReclaim1237
+  command: 'broadcast Hoi'
+  enabled: true/false
+reclaimF:
+  name: EpicReclaim1238
+  command: 'broadcast Hoi'
+  enabled: true/false
+reclaimG:
+  name: EpicReclaim1239
+  command: 'broadcast Hoi'
+  enabled: true/false

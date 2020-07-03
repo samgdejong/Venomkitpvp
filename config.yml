@@ -1,0 +1,58 @@
+staffchat:
+  enabled: true
+  message: '&f&l[&6&lSTAFFCHAT&f&l] &f%player% &6%message%'
+death:
+  enabled: true
+  deathmessage: '&c%attacker% killed &f%victim%!'
+  reward: 'eco give %player% 10'
+killstreak:
+  enabled: true
+  messagecurrent: 'You now have a killstreak of %killstreak%'
+  messagelost: 'You lost your killstreak'
+joinmessage:
+  enabled: 'true'
+  join: '&8[&a+&8] %player%'
+  quit: '&8[&4-&8] %player%'
+scoreboard:
+  title: 'VenomPvP'
+  line1: '  '
+  line2: '&7Name:'
+  line3: '&f%player%'
+  line4: ' '
+  line5: '&7Kills:'
+  line6: '&f%kills%'
+  line7: '       '
+  line8: '&7Deaths'
+  line9: '%deaths%'
+  line10: '  '
+  line11: '&c&lplay.venomnetwork.com'
+kitselector:
+  command 'kit'
+current:
+  arena: '1'
+reclaim:
+  amount: '1'
+arenas:
+  arena1:
+    x:
+    y:
+    z:
+    yaw:
+    pitch:
+    world: arena1
+  arena2:
+    x:
+    y:
+    z:
+    yaw:
+    pitch:
+    world: arena2
+  arena2:
+    x:
+    y:
+    z:
+    yaw:
+    pitch:
+    world: arena2
+kills:
+deaths:

@@ -1,0 +1,33 @@
+name: Venomkitpvp
+version: 1.5.2
+main: me.crazzycarot.venomkitpvp.core.main
+author: crazzycarot
+
+commands:
+ setspawn:
+  usage: /setspawn
+  description: set the spawn of an arena
+  permission: venomkitpvp.setspawn
+ spawn:
+  usage: /spawn
+  description: Warp to the spawn
+ lobby:
+  usage: /lobby
+  description: Warp to the lobby
+ setlobby:
+  usage: /setlobby
+  description: set the lobby of the server
+  permission: venomkitpvp.setlobby
+ setarena:
+  usage: /setarena
+  description: set the current arena of the server
+  permission: venomkitpvp.setarena
+ reclaim:
+  usage: /reclaim
+  description: claim a rank reclaim
+  permission: venomkitpvp.reclaim
+ staffchat:
+  usage: /staffchat
+  description: talk in the staffchat
+  permission: venomkitpvp.staffchat
+  aliases: [sc]
